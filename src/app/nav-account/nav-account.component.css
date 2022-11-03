@@ -1,0 +1,28 @@
+.nav-account ul {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.nav-account ul li{
+    list-style: none;
+    margin: 0 15px;
+    height: 24px;
+}
+
+.nav-account ul li a {
+    color: #FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.nav-account ul li a:last-of-type {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.little-icon {
+    width: 12px;
+    height: 12px;
+    margin-left: 5px;
+}

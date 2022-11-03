@@ -1,0 +1,36 @@
+.slider-mask {
+	overflow-x: visible;
+	width: 100%;
+}
+
+.slider {
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.PresTop10 {
+	display: flex;
+	align-items: center;
+	height: 180px;
+	margin-right: 1.5vw;
+}
+
+.CardTop10 {
+	display: inline-block;
+	width: 120px;
+	height: 180px;
+	background-color: #880000;
+	border-radius: 0 2% 2% 0;
+}
+
+.NumberTop10 {
+	display: inline-block;
+	margin-right: -50px;
+	font-family: "Roboto-extrabold";
+	font-size: 230px;
+	margin-top: 0;
+	margin-bottom: 0;
+	text-shadow: 4px 0 #B0B0B0, -4px 0 #B0B0B0, 0 4px #B0B0B0, 0 -4px #B0B0B0,
+			   4px 4px #B0B0B0, -4px -4px #B0B0B0, 4px -4px #B0B0B0, -4px 4px #B0B0B0;
+	color: #000000;
+}

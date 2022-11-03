@@ -1,0 +1,131 @@
+#main {
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+#presentation-main {
+	padding: 0 60px;
+	position: relative;
+	height: 700px;
+}
+
+#img-main {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+#text-main {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+#title-main {
+	display: flex;
+	flex-flow: column wrap;
+	width: 35%;
+}
+
+#type-main {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+}
+
+#title-main h1 {
+	margin: 0;
+	font-size: 4.5em;
+}
+
+#text-main ul {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	padding: 0;
+	color: #FFFFFF;
+	list-style: none;
+}
+
+#buttons-main {
+	display: flex;
+}
+
+button {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	margin-right: 10px;
+	padding: 10px 25px;
+	border-radius: 5px;
+	border: none;
+	font-size: 18px;
+	font-family: "Roboto-bold";
+	cursor: pointer;
+}
+
+.button-play {
+	background-color: #FFFFFF;
+	color: #000000;
+}
+
+.button-info {
+	background-color: #6D6D6E;
+	color: #FFFFFF;
+}
+
+button img {
+	margin-right: 10px;
+}
+
+.casting {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+	width: 100%;
+	margin-top: 80px;
+}
+
+.casting div {
+	margin-right: 15px;
+	color: #FFFFFF;
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+	border-right: 1px solid white;
+}
+
+.casting div:last-child {
+	border: none;
+}
+
+.netflix-production {
+	width: 35px;
+	height: 35px;
+	margin-right: 10px;
+}
+
+.presentation-rows {
+	display: flex;
+	flex-flow: column wrap;
+	padding: 0 60px;
+	background: linear-gradient(to top, #141414, 98%, transparent);
+	z-index: 1;
+}
+
+.row {
+	width: 100%;
+}
+
+.slider-mask {
+	overflow-x: hidden;
+}
+
+.slider-mask .show {
+	overflow-x: visible;
+}
+
+.slider {
+	display: flex;
+	flex-flow: row wrap;
+}
