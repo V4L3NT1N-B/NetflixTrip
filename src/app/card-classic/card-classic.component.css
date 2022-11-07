@@ -1,0 +1,18 @@
+.slider-mask {
+	overflow-x: visible;
+	width: 100%;
+}
+
+.slider {
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.CardClassic {
+	display: inline-block;
+	width: 230px;
+	height: 130px;
+	background-color: #880000;
+	margin-right: 0.5vw;
+	border-radius: 2%;
+}
