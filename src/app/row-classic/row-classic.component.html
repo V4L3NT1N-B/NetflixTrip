@@ -1,12 +1,13 @@
+<div class="presentation-rows">
+	<div *ngFor='let genre of panelGenre'>
+		<div *ngIf="genre !== 'Top 10';else classicRow">
+			<h3>{{ genre }}</h3>
+			<app-card-classic [panelGenre]="panelGenre"></app-card-classic>
+		</div>
 
-<div *ngFor='let genre of panelGenre'>
-	<div *ngIf="genre !== 'Top 10';else classicRow">
-		<h3>{{ genre }}</h3>
-		<app-card-classic [panelGenre]="panelGenre"></app-card-classic>
+		<ng-template #classicRow>
+			<h3>{{ genre }} des séries aujourd'hui : France</h3>
+			<app-card-top10></app-card-top10>
+		</ng-template>	
 	</div>
-
-	<ng-template #classicRow>
-		<h3>{{ genre }} des séries aujourd'hui : France</h3>
-		<app-card-top10></app-card-top10>
-	</ng-template>	
 </div>

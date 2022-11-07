@@ -102,6 +102,7 @@ nav ul li .active:hover {
 	top: 0;
 	left: 0;
 	width: 100%;
+	z-index: -1;
 }
 
 #text-main {
@@ -175,7 +176,6 @@ button img {
 }
 
 .casting div {
-	margin-right: 15px;
 	color: #FFFFFF;
 	display: flex;
 	flex-flow: column wrap;
@@ -191,14 +191,6 @@ button img {
 	width: 35px;
 	height: 35px;
 	margin-right: 10px;
-}
-
-.presentation-rows {
-	display: flex;
-	flex-flow: column wrap;
-	padding: 0 60px;
-	background: linear-gradient(to top, #141414, 98%, transparent);
-	z-index: 1;
 }
 
 .row {

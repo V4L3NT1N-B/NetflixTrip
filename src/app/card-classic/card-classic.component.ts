@@ -15,11 +15,11 @@ export class CardClassicComponent implements OnInit {
 
 	panelComedie : Array<string> = ["After Life", "Friends", "Brooklyn Nine-nine", "Five", "Presque", "The End of the F*cking World", "Familly Business", "", "", "", ""];
 
-	panelSF : Array<string>  = ["Sense8", "Lock And Key", "The 100", "Umbrella Academy", "Lucifer", "The Flash", "Alice in Borderland", "Daredevil", "Ragnarök"];
+	panelSF : Array<string> = ["Sense8", "Lock And Key", "The 100", "Umbrella Academy", "Lucifer", "The Flash", "Alice in Borderland", "Daredevil", "Ragnarök"];
 
-	panelAnimation : Array<string>  = ["Klaus", "Le Cauchemar du loup", "La mer des monstres", "Bubble", "Kung Fu Panda", "BigFoot"];
+	panelAnimation : Array<string> = ["Klaus", "Le Cauchemar du loup", "La mer des monstres", "Bubble", "Kung Fu Panda", "BigFoot"];
 
-	panelHorreur : Array<string>  = ["Freddy les griffes de la nuit", "Sinister", "Le Cabinet des Curiosités", "Stranger Things", "Dahmer", "Kingdom", "", ""];
+	panelHorreur : Array<string> = ["Freddy les griffes de la nuit", "Sinister", "Le Cabinet des Curiosités", "Stranger Things", "Dahmer", "Kingdom", "", ""];
 
 	constructor() {}
 
@@ -28,9 +28,10 @@ export class CardClassicComponent implements OnInit {
 		for(const genre of this.panelGenre) {
 			if(genre == "Comédie"){
 				this.panel = this.panelComedie;
-
 			}else if(genre == "SF et Fantastique"){
 				this.panel = this.panelSF;
+			}else if(genre == "Animation"){
+				this.panel = this.panelAnimation;
 			}
 		}
 	}

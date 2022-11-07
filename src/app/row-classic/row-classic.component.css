@@ -1,0 +1,7 @@
+.presentation-rows {
+	display: flex;
+	flex-flow: column wrap;
+	padding: 0 60px;
+	background: linear-gradient(to top, #141414, 98%, transparent);
+	z-index: 1;
+}
