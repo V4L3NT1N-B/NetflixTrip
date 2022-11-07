@@ -9,7 +9,7 @@ import * as $ from 'jquery';
 
 export class RowComponent implements OnInit {
 
-	panelGenre = ["Comédie", "SF et Fantastique", "Animation", "Horreur", "Films européens", "Drames", "Top 10"];
+	panelGenre = ["Comédie", "SF et Fantastique", "Animation", "Horreur", "Top 10", "Films européens", "Drames"];
 
 	panelFormat = ["série", "film"];
 
