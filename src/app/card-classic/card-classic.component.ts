@@ -11,7 +11,8 @@ export class CardClassicComponent implements OnInit {
 	@Input()
 	panelGenre : Array<string> = [];
 
-	panel : Array<string> = [];
+	@Input()
+	genre : string = "";
 
 	panelComedie : Array<string> = ["After Life", "Friends", "Brooklyn Nine-nine", "Five", "Presque", "The End of the F*cking World", "Familly Business", "How I Met Your Mother", "Bonne nuit Blanche"];
 
@@ -21,19 +22,16 @@ export class CardClassicComponent implements OnInit {
 
 	panelHorreur : Array<string> = ["Freddy les griffes de la nuit", "Sinister", "Le Cabinet des Curiosités", "Stranger Things", "Dahmer", "Kingdom", "Saw", "Halloween"];
 	
+	panel : Array<Array<string>> = [this.panelComedie, this.panelSF, this.panelAnimation, this.panelHorreur];
+
+	dict = new Map<string, Array<string>>();
+
 	constructor() {}
 
 	ngOnInit(): void {
 
-		for(const genre of this.panelGenre) {
-			if(genre == "Comédie") {
-				this.panel = this.panelComedie;
-			}else if(genre == "SF et Fantastique") {
-				this.panel = this.panelSF;
-			}else if(genre == "Animation") {
-				this.panel = this.panelAnimation;
-			}
+		for(let i=0 ; i <this.panelGenre.length ; i++ ) {
+			this.dict.set(this.panelGenre[i], this.panel[i]);
 		}
 	}
-
 }

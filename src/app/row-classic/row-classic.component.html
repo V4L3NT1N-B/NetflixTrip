@@ -2,7 +2,7 @@
 	<div *ngFor='let genre of panelGenre'>
 		<div *ngIf="genre !== 'Top 10';else top10Row">
 			<h3>{{ genre }}</h3>
-			<app-card-classic [panelGenre]="panelGenre"></app-card-classic>
+			<app-card-classic [panelGenre]="panelGenre" [genre]="genre"></app-card-classic>
 		</div>
 
 		<ng-template #top10Row>

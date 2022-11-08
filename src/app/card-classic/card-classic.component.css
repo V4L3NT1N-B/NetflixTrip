@@ -3,7 +3,7 @@
 	width: 100%;
 }
 
-.slider {
+.align-cards {
 	display: flex;
 	flex-flow: row nowrap;
 }
