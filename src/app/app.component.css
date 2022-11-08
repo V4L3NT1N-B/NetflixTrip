@@ -108,7 +108,7 @@ nav ul li .active:hover {
 #text-main {
 	position: absolute;
 	bottom: 0;
-	width: 100%;
+	width: calc(100% - 120px);
 }
 
 #title-main {

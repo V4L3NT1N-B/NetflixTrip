@@ -26,11 +26,11 @@ export class CardClassicComponent implements OnInit {
 	ngOnInit(): void {
 
 		for(const genre of this.panelGenre) {
-			if(genre == "Comédie"){
+			if(genre == "Comédie") {
 				this.panel = this.panelComedie;
-			}else if(genre == "SF et Fantastique"){
+			}else if(genre == "SF et Fantastique") {
 				this.panel = this.panelSF;
-			}else if(genre == "Animation"){
+			}else if(genre == "Animation") {
 				this.panel = this.panelAnimation;
 			}
 		}
