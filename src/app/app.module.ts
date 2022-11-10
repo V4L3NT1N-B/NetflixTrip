@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CardTop10Component } from './card-top10/card-top10.component';
 import { CardClassicComponent } from './card-classic/card-classic.component';
 import { RowComponent } from './row-classic/row-classic.component';
+var apicall: any;
 
 @NgModule({
   declarations: [
@@ -21,4 +22,6 @@ import { RowComponent } from './row-classic/row-classic.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+
+}

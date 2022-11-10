@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, } from '@angular/core';
-
+import { getMovie } from 'src/assets/js/apicall';
+declare var getData : any;
 
 @Component({
 	selector: 'app-card-classic',
@@ -26,12 +27,19 @@ export class CardClassicComponent implements OnInit {
 
 	dict = new Map<string, Array<string>>();
 
+	dataMovie : Array<string>;
+
 	constructor() {}
 
 	ngOnInit(): void {
+		var results = [];
+		
+		this.dataMovie = getMovie(550);
+		console.log();
 
 		for(let i=0 ; i <this.panelGenre.length ; i++ ) {
 			this.dict.set(this.panelGenre[i], this.panel[i]);
 		}
 	}
 }
+
