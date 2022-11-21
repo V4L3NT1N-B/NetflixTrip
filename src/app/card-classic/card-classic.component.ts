@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, } from '@angular/core';
-
+declare var getData : any;
+//declare var getMovie : any;
+//declare var movieTitles : any;
 
 @Component({
 	selector: 'app-card-classic',
@@ -26,12 +28,32 @@ export class CardClassicComponent implements OnInit {
 
 	dict = new Map<string, Array<string>>();
 
+	movieTitles : Array<string> = [];
+
 	constructor() {}
 
 	ngOnInit(): void {
+		/*
+		let movieDetail = getMovie(550);
+
+		console.log("MovieDetail : " + movieDetail);
 
 		for(let i=0 ; i <this.panelGenre.length ; i++ ) {
 			this.dict.set(this.panelGenre[i], this.panel[i]);
-		}
+		} 
+		*/
+		var randMovie = Math.floor(Math.random() * 100);
+
+		(async () => {
+			var movieTitle = await getData(randMovie);
+			//console.log("Valeur : " + movieTitle.values());
+			
+			this.movieTitles.push(movieTitle.title);
+			console.log("movieTitles : " + this.movieTitles);
+			return this.movieTitles;
+		});
+
+		
 	}
 }
+
