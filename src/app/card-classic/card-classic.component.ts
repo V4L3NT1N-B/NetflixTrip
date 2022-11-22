@@ -28,27 +28,19 @@ export class CardClassicComponent implements OnInit {
 
 	dict = new Map<string, Array<string>>();
 
-	movieTitles : Array<string> = [];
+	movieTitles2 : Array<string> = [];
 
-	constructor() {}
+	movieTitles : Array<string> = [];
+	
+
+	constructor() {	}
 
 	ngOnInit(): void {
-		/*
-		let movieDetail = getMovie(550);
-
-		console.log("MovieDetail : " + movieDetail);
-
-		for(let i=0 ; i <this.panelGenre.length ; i++ ) {
-			this.dict.set(this.panelGenre[i], this.panel[i]);
-		} 
-		*/
-		var randMovie = Math.floor(Math.random() * 100);
 
 		(async () => {
-			var movieTitle = await getData(randMovie);
-			//console.log("Valeur : " + movieTitle.values());
+			var movie = await getData(550);			
 			
-			this.movieTitles.push(movieTitle.title);
+			this.movieTitles.push(movie.title);
 			console.log("movieTitles : " + this.movieTitles);
 			return this.movieTitles;
 		});
