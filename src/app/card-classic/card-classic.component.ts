@@ -1,7 +1,8 @@
 import { Component, OnInit, Input, } from '@angular/core';
-declare var getData : any;
-//declare var getMovie : any;
-//declare var movieTitles : any;
+import { readyException } from 'jquery';
+import { repeat } from 'rxjs';
+import * as $ from 'jquery';
+declare var getMovie : any;
 
 @Component({
 	selector: 'app-card-classic',
@@ -16,36 +17,56 @@ export class CardClassicComponent implements OnInit {
 	@Input()
 	genre : string = "";
 
-	panelComedie : Array<string> = ["After Life", "Friends", "Brooklyn Nine-nine", "Five", "Presque", "The End of the F*cking World", "Familly Business", "How I Met Your Mother", "Bonne nuit Blanche"];
-
-	panelSF : Array<string> = ["Sense8", "Lock And Key", "The 100", "Umbrella Academy", "Lucifer", "The Flash", "Alice in Borderland", "Daredevil", "Ragnarök"];
-
-	panelAnimation : Array<string> = ["Klaus", "Le Cauchemar du loup", "La mer des monstres", "Bubble", "Kung Fu Panda", "BigFoot"];
-
-	panelHorreur : Array<string> = ["Freddy les griffes de la nuit", "Sinister", "Le Cabinet des Curiosités", "Stranger Things", "Dahmer", "Kingdom", "Saw", "Halloween"];
-	
-	panel : Array<Array<string>> = [this.panelComedie, this.panelSF, this.panelAnimation, this.panelHorreur];
-
 	dict = new Map<string, Array<string>>();
 
-	movieTitles2 : Array<string> = [];
+	movieTitles : Array<Array<string>> = [];
 
-	movieTitles : Array<string> = [];
-	
 
-	constructor() {	}
+	panelGenreGB : Array<string> = ["Comedy", "Science Fiction", "Animation", "Horror","Top 10", "Adventure", "Drama"];
+
+	BASEURLimg : string = "https://image.tmdb.org/t/p/w300";
+
+	constructor() {}
 
 	ngOnInit(): void {
 
+		
 		(async () => {
-			var movie = await getData(550);			
 			
-			this.movieTitles.push(movie.title);
-			console.log("movieTitles : " + this.movieTitles);
-			return this.movieTitles;
+			var i = 0;
+
+			var cumul : Array<string>= [];
+
+			while(i < 10) {
+				var idMovie = Math.floor(Math.random() * 500);
+				var movie = await getMovie(idMovie);
+				var movieTitle = movie.title;
+				var URLmovie = movie.backdrop_path;
+				var URLimg = this.BASEURLimg + URLmovie;
+				var soustab = [];
+				soustab.push(movieTitle);
+				soustab.push(URLimg);
+				
+				if(movieTitle !== undefined && !cumul.includes(movieTitle)){
+					var len = movie.genres.length;
+					for (let x =0; x<len; x++){
+						if (this.panelGenreGB[this.panelGenre.indexOf(this.genre)].includes(movie.genres[x].name)){
+							this.movieTitles.push(soustab);
+							cumul.push(movieTitle);
+							i++;
+						}
+					}
+				}
+			}
+				
+		})();
+
+		$(".row").on("mouseenter", function() {
+			$( this ).find(".next img").css("visibility", "visible");
 		});
 
-		
+		$(".row").on("mouseleave", function() {
+			$( this ).find(".next img").css("visibility", "hidden");
+		});
 	}
 }
-

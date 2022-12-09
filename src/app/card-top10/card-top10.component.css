@@ -1,31 +1,90 @@
+.slider {
+	padding: 0 60px;
+	touch-action: pan-y;
+	position: relative;
+}
+
 .slider-mask {
-	overflow-x: visible;
+	overflow-x: hidden;
 	width: 100%;
 }
 
-.slider {
-	display: flex;
-	flex-flow: row nowrap;
+.show {
+	overflow-x: visible;
+}
+
+.slider-row {
+	white-space: nowrap;
+}
+
+.slider-item {
+	width: 16.6666667%;
+	box-sizing: border-box;
+	position: relative;
+	display: inline-block;
+	padding: 0 0.2vw;
+	vertical-align: top;
+	white-space: normal;
+	cursor: pointer;
 }
 
 .PresTop10 {
 	display: flex;
 	align-items: center;
 	height: 180px;
-	margin-right: 1.5vw;
+}
+
+.button {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	width: 60px;
+	height: 180px;
+	background-color: hsla(0,0%,8%,.5);
+	position: absolute;
+	cursor: pointer;
+	z-index: 5;
+	visibility: visible;
+	top: 0;
+	bottom: 0;
+}
+
+.next {
+	right: 0;
+}
+
+.previous {
+	left: 0;
+}
+
+.button img {
+	width: 32px;
+	height: 32px;
+	visibility: hidden;
+}
+
+.previous img {
+	transform: rotate(90deg);
+}
+
+.next img {
+	transform: rotate(-90deg);
 }
 
 .CardTop10 {
+	height: 100%;
+}
+
+.CardTop10 img{
 	display: inline-block;
-	width: 120px;
-	height: 180px;
-	background-color: #880000;
+	height: 100%;
 	border-radius: 0 2% 2% 0;
 }
 
 .NumberTop10 {
 	display: inline-block;
-	margin-right: -50px;
+	margin-right: -30px;
 	font-family: "Roboto-extrabold";
 	font-size: 230px;
 	margin-top: 0;

@@ -1,6 +1,6 @@
 <div class="presentation-rows">
-	<div *ngFor='let genre of panelGenre'>
-		<div *ngIf="genre !== 'Top 10';else top10Row">
+	<div *ngFor='let genre of panelGenre' style="width: 100%">
+		<div *ngIf="genre !== 'Top 10';else top10Row" style="width: 100%">
 			<h3>{{ genre }}</h3>
 			<app-card-classic [panelGenre]="panelGenre" [genre]="genre"></app-card-classic>
 		</div>

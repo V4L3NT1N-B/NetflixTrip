@@ -1,10 +1,22 @@
 <div class="row">
-	<div class="slider-mask">
-		<div class="slider align-cards">
-			<div class="CardClassic" *ngFor="let title of movieTitles">
-				<h6>{{ title }}</h6>
-				<img src="" alt="">
+	<div class="slider">
+		<span class="button previous">
+			<img src="../../assets/img/IconArrow.svg" alt="">
+		</span>
+		<div class="slider-mask show">
+			<div class="slider-row">
+				<div class="slider-item" *ngFor="let title of movieTitles">
+					<div class="CardClassic">
+						<h6>{{ title[0] }}</h6>
+						<div class="filter">
+							<img [src]="title[1]" alt=""/>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
+		<span class="button next">
+			<img src="../../assets/img/IconArrow.svg" alt="">
+		</span>
 	</div>
 </div>

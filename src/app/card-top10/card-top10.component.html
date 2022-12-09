@@ -1,13 +1,32 @@
 <div class="row">
-	<div class="slider-mask">
+	<!--<div class="slider-mask">
 		<div class="slider">
-			<div class="PresTop10" *ngFor="let cardTop10 of serieTop10 ; let i = index">
+			<div class="PresTop10" *ngFor="let cardTop10 of movieTop ; let i = index">
 				<p class="NumberTop10">{{ i + 1 }}</p>
 				<div class="CardTop10">
-					<h6>{{ cardTop10 }}</h6>
-					<img src="" alt="">
+					<img [src]="cardTop10[1]" alt="">
 				</div>
 			</div>
 		</div>
+	</div>-->
+	<div class="slider">
+		<span class="button previous">
+			<img src="../../assets/img/IconArrow.png" alt="">
+		</span>
+		<div class="slider-mask show">
+			<div class="slider-row">
+				<div class="slider-item" *ngFor="let cardTop10 of movieTop ; let i = index">
+					<div class="PresTop10">
+						<p class="NumberTop10">{{ i + 1 }}</p>
+						<div class="CardTop10">
+							<img [src]="cardTop10[1]" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<span class="button next">
+			<img src="../../assets/img/IconArrow.png" alt="">
+		</span>
 	</div>
 </div>

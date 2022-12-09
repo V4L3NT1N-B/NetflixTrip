@@ -1,5 +1,4 @@
 import { Component, OnInit} from '@angular/core';
-import * as $ from 'jquery';
 
 @Component({
 	selector: 'app-row',
@@ -9,7 +8,7 @@ import * as $ from 'jquery';
 
 export class RowComponent implements OnInit {
 
-	panelGenre = ["Comédie", "SF et Fantastique", "Animation", "Horreur", "Top 10", "Films européens", "Drames"];
+	panelGenre = ["Comédie", "SF et Fantastique", "Animation", "Horreur", "Top 10", "Aventure", "Drames"];
 
 	panelFormat = ["série", "film"];
 

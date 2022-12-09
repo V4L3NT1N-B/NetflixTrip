@@ -3,7 +3,7 @@
 const APIKey = '15abdf99fb623409a747e0f158f9ef01';
 const BASEURL = "https://api.themoviedb.org/3/";
 
-function getData(idMovie){
+function getMovie(idMovie){
 	var apiUrl = BASEURL+"movie/"+idMovie+"?api_key="+APIKey;
 	return new Promise((resolve, reject) => {
 		fetch(apiUrl)
@@ -20,17 +20,19 @@ function getData(idMovie){
 	})
 };
 
-
-
-
-(async () => {
-	var movie = await getData(550);			
-	
-	this.movieTitles.push(movie.title);
-	console.log("movieTitles : " + this.movieTitles);
-	return this.movieTitles;
-});
-
-
-//console.log(randMovie);
-
+function getTop10(){
+	var apiUrl = BASEURL+"movie/top_rated?api_key="+APIKey;
+	return new Promise((resolve, reject) => {
+		fetch(apiUrl)
+		.then(response => {
+			response.json().then(data => {
+				//console.log("getData : "+data);
+				resolve(data);
+			});
+		})
+		.catch(e => {
+			console.log(e);
+			reject(e);
+		});
+	})
+};

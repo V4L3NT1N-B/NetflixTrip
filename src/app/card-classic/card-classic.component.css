@@ -1,18 +1,88 @@
+.slider {
+	padding: 0 60px;
+	touch-action: pan-y;
+	position: relative;
+}
+
 .slider-mask {
-	overflow-x: visible;
+	overflow-x: hidden;
 	width: 100%;
 }
 
-.align-cards {
+.show {
+	overflow-x: visible;
+}
+
+.slider-row {
+	white-space: nowrap;
+}
+
+.slider-item {
+	width: 16.6666667%;
+	box-sizing: border-box;
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.button {
 	display: flex;
-	flex-flow: row nowrap;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	width: 60px;
+	height: 130px;
+	background-color: hsla(0,0%,8%,.5);
+	position: absolute;
+	cursor: pointer;
+	z-index: 5;
+	visibility: visible;
+	top: 0;
+	bottom: 0;
+}
+
+.next {
+	right: 0;
+}
+
+.previous {
+	left: 0;
+}
+
+.button img {
+	width: 32px;
+	height: 32px;
+	visibility: hidden;
+}
+
+.previous img {
+	transform: rotate(90deg);
+}
+
+.next img {
+	transform: rotate(-90deg);
 }
 
 .CardClassic {
-	display: inline-block;
-	width: 230px;
 	height: 130px;
-	background-color: #880000;
-	margin-right: 0.5vw;
 	border-radius: 2%;
+}
+
+.filter {
+	background-color: #000000;
+	height: 130px;
+	width: fit-content;
+}
+
+.CardClassic h6 {
+	position: absolute;
+	color: #FFFFFF;
+	z-index: 1;
+}
+
+.CardClassic img {
+	width: 224px;
+	height: 130px;
+	border-radius: 2%;
+	opacity: 0.8;
 }

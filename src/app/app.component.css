@@ -159,9 +159,17 @@ button {
 	color: #000000;
 }
 
+.button-play:hover {
+	background-color: #bcbcbc;
+}
+
 .button-info {
 	background-color: #6D6D6E;
 	color: #FFFFFF;
+}
+
+.button-info:hover {
+	background-color: #535353;
 }
 
 button img {
@@ -230,6 +238,10 @@ footer {
     margin-right: 100px;
 }
 
+.table-footer .social-media {
+	margin: 0;
+}
+
 ul {
     padding: 0;
 }
@@ -250,7 +262,7 @@ footer ul li a:hover {
 .social-media ul {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 #button-footer {
