@@ -22,7 +22,7 @@ export class HomePageComponent implements OnInit {
      // console.log("oui");
     //}
 
-    console.log(localStorage.getItem('login'));
+    //console.log(localStorage.getItem('login'));
     if (localStorage.getItem('login') == null || localStorage.getItem('mdp') == null){
       this.router.navigate(['login']);
     }

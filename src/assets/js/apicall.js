@@ -40,7 +40,7 @@ function getTop10(){
   function getData(){
 	var listeGlobale = [];
 	return new Promise((resolve, reject) => {
-		fetch('http://localhost:80/angular.php').then(data => {
+		fetch('http://localhost:80/angular.php').then(data => { //fichier PHP appelé C:\xampp\htdocs\angular.php
 			data = data.json();
 			 resolve(data);
 	}
@@ -51,6 +51,7 @@ function getTop10(){
       }
 
 
+	//en cas de besoin d'attendre
 	function delay(second){
       return new Promise(function(resolve, reject) {
         setTimeout(function() {
@@ -58,9 +59,3 @@ function getTop10(){
         }, second);
       })
     };
-
-	//var listeGlobale = this.listeGlobale;
-//test().then(function(v) {
-//  console.log(listeGlobale[0][0])
-//})
-//await this.getData();
