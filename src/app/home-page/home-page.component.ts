@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -8,9 +9,25 @@ import * as $ from 'jquery';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+    this.router.navigate(['home']);
+
+    //pour recevoir info avec redirect
+    //si vide alors == 1
+
+    //this.ident = history.state;
+    //if (Object.values(this.ident)[0] == 1){
+     // console.log("oui");
+    //}
+
+    console.log(localStorage.getItem('login'));
+    if (localStorage.getItem('login') == null || localStorage.getItem('mdp') == null){
+      this.router.navigate(['login']);
+    }
+
+
 		
       var scrollState = "top";
   

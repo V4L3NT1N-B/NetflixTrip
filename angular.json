@@ -27,6 +27,7 @@
 						],
 						"scripts": [
 						]
+						
 					},
 					"configurations": {
 						"production": {
@@ -63,12 +64,16 @@
 				},
 				"serve": {
 					"builder": "@angular-devkit/build-angular:dev-server",
+					"options": {
+						"browserTarget": "NetflixTrip:build",
+						"proxyConfig": "src/proxy.conf.json"
+					},
 					"configurations": {
 						"production": {
 							"browserTarget": "NetflixTrip:build:production"
 						},
 						"development": {
-							"browserTarget": "NetflixTrip:build:development"
+							"browserTarget": "NetflixTrip:build:development",
 						}
 					},
 					"defaultConfiguration": "development"
