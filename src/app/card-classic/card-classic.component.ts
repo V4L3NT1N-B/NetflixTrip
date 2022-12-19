@@ -1,6 +1,4 @@
 import { Component, OnInit, Input, } from '@angular/core';
-import { readyException } from 'jquery';
-import { repeat } from 'rxjs';
 import * as $ from 'jquery';
 declare var getMovie : any;
 
@@ -17,10 +15,9 @@ export class CardClassicComponent implements OnInit {
 	@Input()
 	genre : string = "";
 
-	dict = new Map<string, Array<string>>();
+	//dict = new Map<string, Array<string>>();
 
 	movieTitles : Array<Array<string>> = [];
-
 
 	panelGenreGB : Array<string> = ["Comedy", "Science Fiction", "Animation", "Horror","Top 10", "Adventure", "Drama"];
 
@@ -37,7 +34,7 @@ export class CardClassicComponent implements OnInit {
 
 			var cumul : Array<string>= [];
 
-			while(i < 10) {
+			while(i < 12) {
 				var idMovie = Math.floor(Math.random() * 500);
 				var movie = await getMovie(idMovie);
 				var movieTitle = movie.title;
@@ -68,5 +65,6 @@ export class CardClassicComponent implements OnInit {
 		$(".row").on("mouseleave", function() {
 			$( this ).find(".next img").css("visibility", "hidden");
 		});
-	}
+
+	};
 }

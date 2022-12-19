@@ -1,7 +1,7 @@
 .slider {
 	padding: 0 60px;
-	touch-action: pan-y;
 	position: relative;
+	touch-action: pan-y;
 }
 
 .slider-mask {
