@@ -129,6 +129,7 @@ button {
 	display: flex;
 	align-items: center;
 	font-family: "Roboto-Regular";
+	position: initial;
 }
 
 #sign-in-info input {
