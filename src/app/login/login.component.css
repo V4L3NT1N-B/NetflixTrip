@@ -57,7 +57,7 @@ input:focus-visible {
 	outline: none;
 }
 
-.input label {
+label {
 	color: #8c8c8c;
 	font-family: "Roboto-Regular";
 	font-size: 16px;
@@ -68,6 +68,12 @@ input:focus-visible {
 }
 
 input:focus ~ label {
+	top: 7px;
+	font-size: 12px;
+	transition: 0.1s;
+}
+
+input:valid ~ label {
 	top: 7px;
 	font-size: 12px;
 	transition: 0.1s;
@@ -220,3 +226,67 @@ label .checkmark:after {
 #learn-more:hover {
 	text-decoration: underline;
 }
+
+/* FOOTER */
+footer {
+	background-color: #000000;
+	opacity: 0.75;
+	position: relative;
+	padding: 30px;
+}
+
+#info-footer {
+	max-width: 1000px;
+	margin: auto;
+}
+
+footer p {
+	margin-top: 0;
+	color: #737373;
+	font-family: "Roboto-Regular";
+}
+
+footer ul {
+	padding-left: 0;
+	width: 1000px;
+}
+
+footer ul li {
+	display: inline-block;
+	width: 25%;
+}
+
+footer ul li a {
+	font-family: "Roboto-Regular";
+	color: #737373;
+	font-size: 13px;
+}
+
+
+footer ul li a:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+#lang {
+	border: 1px solid #333333;
+	color: #737373;
+	opacity: 1;
+	width: fit-content;
+	border-radius: 2px;
+}
+
+#lang:before {
+	content: url(../../assets/img/IconGlobe_2.svg);
+	width: 24px;
+	height: 24px;
+}
+
+#lang select {
+	padding: 10px 10px 10px 35px;
+	background-color: #000000;
+	border: none;
+	color: #737373;
+	border-radius: 2px;
+}
+
