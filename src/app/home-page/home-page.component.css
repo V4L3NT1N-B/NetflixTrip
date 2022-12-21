@@ -79,10 +79,51 @@ nav ul li .active:hover {
     align-items: center;
 }
 
+.nav-account ul li a:last-of-type .little-icon {
+	transition: 0.3s;
+}
+
+.nav-account ul li a:last-of-type:hover .little-icon {
+	transform: rotate(180deg);
+	transition: 0.3s;
+}
+
 .little-icon {
     width: 12px;
     height: 12px;
     margin-left: 5px;
+}
+
+#menu-account {
+	background-color: rgba(0,0,0,0.7);
+	position: absolute;
+	width: 250px;
+}
+
+#menu-account ul {
+	padding: 0;
+	display: flex;
+	flex-flow: column wrap;
+}
+
+#menu-account ul li {
+	margin: 0;
+}
+
+#menu-account ul li:last-of-type {
+	margin: 0;
+	padding: 5px;
+	border-top: 1px solid #B3B3B3;
+}
+
+#menu-account ul li a {
+	color: #FFFFFF;
+	font-family: "Roboto-Regular";
+	padding: 5px;
+}
+
+#menu-account ul li a:hover {
+	text-decoration: underline;
 }
 
 /* HOMECARD */
