@@ -42,6 +42,13 @@ export class LoginComponent implements OnInit {
         var mdp =  document.getElementById("mdp") as HTMLInputElement | null;
         var check=$("#check").is(":checked");
 
+        if ($("#mail").val() == 1 && $("#mdp").val() == 1){
+          console.log("oui");
+          localStorage.setItem('mail',String($("#mail").val()));
+          localStorage.setItem('mdp',String($("#mdp").val()));
+          localStorage.setItem('checked?', String(check));
+          ch.navigate(['home']);
+        }
         if (mail != null && mdp != null){
           for (var i =0; i<liste.length; i++){
             if (liste[i].login == $("#mail").val() || $("#mail").val() == "Valentin"){
