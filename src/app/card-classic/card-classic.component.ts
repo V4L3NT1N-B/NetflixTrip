@@ -29,31 +29,45 @@ export class CardClassicComponent implements OnInit {
 
 		
 		(async () => {
-			
-			var i = 0;
 
-			var cumul : Array<string>= [];
+			if (localStorage.getItem(this.panelGenreGB[this.panelGenre.indexOf(this.genre)]) == null){
+				console.log("je passe par là");
 
-			while(i < 12) {
-				var idMovie = Math.floor(Math.random() * 500);
-				var movie = await getMovie(idMovie);
-				var movieTitle = movie.title;
-				var URLmovie = movie.backdrop_path;
-				var URLimg = this.BASEURLimg + URLmovie;
-				var soustab = [];
-				soustab.push(movieTitle);
-				soustab.push(URLimg);
-				
-				if(movieTitle !== undefined && !cumul.includes(movieTitle)){
-					var len = movie.genres.length;
-					for (let x =0; x<len; x++){
-						if (this.panelGenreGB[this.panelGenre.indexOf(this.genre)].includes(movie.genres[x].name)){
-							this.movieTitles.push(soustab);
-							cumul.push(movieTitle);
-							i++;
+
+				var i = 0;
+
+				var cumul : Array<string>= [];
+	
+				while(i < 12) {
+					var idMovie = Math.floor(Math.random() * 1000);
+					var movie = await getMovie(idMovie);
+					var movieTitle = movie.title;
+					var URLmovie = movie.backdrop_path;
+					var URLimg = this.BASEURLimg + URLmovie;
+					var soustab = [];
+					soustab.push(movieTitle);
+					soustab.push(URLimg);
+					
+					if(movieTitle !== undefined && !cumul.includes(movieTitle)){
+						var len = movie.genres.length;
+						for (let x =0; x<len; x++){
+							//console.log(this.panelGenreGB[this.panelGenre.indexOf(this.genre)]);
+							//console.log(movie.genres[x].name);
+							console.log("blabla");
+							if (this.panelGenreGB[this.panelGenre.indexOf(this.genre)].includes(movie.genres[x].name)){
+								this.movieTitles.push(soustab);
+								cumul.push(movieTitle);
+								i++;
+							}
 						}
 					}
 				}
+
+				localStorage.setItem(this.panelGenreGB[this.panelGenre.indexOf(this.genre)], JSON.stringify(this.movieTitles));
+							
+			} else {
+				console.log("loser")
+				this.movieTitles = JSON.parse(String(localStorage.getItem(this.panelGenreGB[this.panelGenre.indexOf(this.genre)])));
 			}
 				
 		})();

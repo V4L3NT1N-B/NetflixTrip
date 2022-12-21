@@ -23,8 +23,8 @@ export class HomePageComponent implements OnInit {
     //}
 
     //console.log(localStorage.getItem('login'));
-    if (localStorage.getItem('login') == null || localStorage.getItem('mdp') == null){
-      this.router.navigate(['login']);
+    if (localStorage.getItem('mail') == null || localStorage.getItem('mdp') == null){
+      this.router.navigate(['login']);  
     }
 
 
