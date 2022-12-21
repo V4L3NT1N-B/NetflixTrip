@@ -35,24 +35,18 @@ export class LoginComponent implements OnInit {
     //on peut envoyer des messages en meme temps qu'un redirect info interessante
 
     (async () => {
-      var liste = await getData();
+      //var liste = await getData();
+      var liste: Array<string> = []
       $("#submit").on('click', function(e){
         e.preventDefault();
         var mail = document.getElementById("mail") as HTMLInputElement | null;
         var mdp =  document.getElementById("mdp") as HTMLInputElement | null;
         var check=$("#check").is(":checked");
 
-        if ($("#mail").val() == 1 && $("#mdp").val() == 1){
-          console.log("oui");
-          localStorage.setItem('mail',String($("#mail").val()));
-          localStorage.setItem('mdp',String($("#mdp").val()));
-          localStorage.setItem('checked?', String(check));
-          ch.navigate(['home']);
-        }
         if (mail != null && mdp != null){
           for (var i =0; i<liste.length; i++){
-            if (liste[i].login == $("#mail").val() || $("#mail").val() == "Valentin"){
-              if (liste[i].mdp == $("#mdp").val() || $("#mdp").val() == "123"){
+            if (liste[i] == $("#mail").val()){
+              if (liste[i] == $("#mdp").val()){
                 //ident.push(smth);
                 localStorage.setItem('mail',String($("#mail").val()));
                 localStorage.setItem('mdp',String($("#mdp").val()));
