@@ -80,12 +80,12 @@ nav ul li .active:hover {
 }
 
 .nav-account ul li a:last-of-type .little-icon {
-	transition: 0.3s;
+	transition: 0.4s;
 }
 
 .nav-account ul li a:last-of-type:hover .little-icon {
 	transform: rotate(180deg);
-	transition: 0.3s;
+	transition: 0.4s;
 }
 
 .little-icon {
@@ -94,10 +94,32 @@ nav ul li .active:hover {
     margin-left: 5px;
 }
 
+.nav-account .icon{
+	border-radius: 2px;
+}
+
+/* SOUS-MENU */
 #menu-account {
-	background-color: rgba(0,0,0,0.7);
 	position: absolute;
-	width: 250px;
+	right: 72px;
+	display: none;
+	z-index: 5;
+	/* margin-top: 10px; */
+	padding-top: 20px;
+}
+
+.icon-list-account { 
+	transform: rotate(180deg);
+	/* margin-left: 150px; */
+	position: relative; /* */
+	left: 145px; /* */
+	top: -12px; /* */
+
+}
+
+#list-account {
+	background-color: rgba(0,0,0,0.85);
+	margin-top: -15px;
 }
 
 #menu-account ul {
@@ -108,22 +130,39 @@ nav ul li .active:hover {
 
 #menu-account ul li {
 	margin: 0;
+	height: fit-content;
 }
 
 #menu-account ul li:last-of-type {
 	margin: 0;
-	padding: 5px;
-	border-top: 1px solid #B3B3B3;
+	border-top: 1px solid #535353;
 }
 
 #menu-account ul li a {
 	color: #FFFFFF;
 	font-family: "Roboto-Regular";
-	padding: 5px;
+	display: flex;
+	padding: 10px;
+	padding-right: 25px;
+	font-size: 13px;
+	align-items: center;
+}
+
+#menu-account ul li:last-of-type a{
+	padding: 15px 10px;
 }
 
 #menu-account ul li a:hover {
 	text-decoration: underline;
+}
+
+#menu-account ul li a img {
+	margin-right: 10px;
+}
+
+#menu-account ul li:last-of-type a {
+	display: flex;
+	justify-content: center;
 }
 
 /* HOMECARD */

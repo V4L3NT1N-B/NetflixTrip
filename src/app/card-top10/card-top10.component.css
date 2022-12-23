@@ -2,6 +2,7 @@
 	padding: 0 60px;
 	touch-action: pan-y;
 	position: relative;
+	overflow: hidden;
 }
 
 .slider-mask {
