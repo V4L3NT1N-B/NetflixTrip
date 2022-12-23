@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 import { Router } from '@angular/router';
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-home-page',
@@ -9,7 +10,9 @@ import { Router } from '@angular/router';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private titleService:Title) {
+    this.titleService.setTitle("Accueil - NetflixTrip");
+   }
 
   ngOnInit(): void {
     this.router.navigate(['home']);

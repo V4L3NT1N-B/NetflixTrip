@@ -6,7 +6,7 @@
 		<h1>S'identifier</h1>
 		<div class="input">
 			<div class="input-error">
-				<input type="text" for="mail" id="mail" class="form-control" required>
+				<input type="text" for="mail" id="mail" class="form-control" [(ngModel)]="data" (ngModelChange)="mailChanged($event)" required>
 				<label for="mail">E-mail ou num&eacute;ro de t&eacute;l&eacute;phone</label>
 			</div>
 			<div class="error">Veuillez entrer une adresse e-mail ou un num&eacute;ro de t&eacute;l&eacute;phone valide.</div>
