@@ -10,7 +10,6 @@ function getMovie(idMovie){
 		fetch(apiUrl)
 		.then(response => {
 			response.json().then(data => {
-				//console.log("getData : "+data);
 				resolve(data);
 			});
 		})
@@ -27,7 +26,6 @@ function getTop10(){
 		fetch(apiUrl)
 		.then(response => {
 			response.json().then(data => {
-				//console.log("getData : "+data);
 				resolve(data);
 			});
 		})

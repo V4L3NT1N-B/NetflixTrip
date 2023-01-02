@@ -23,6 +23,8 @@ export class CardClassicComponent implements OnInit {
 
 	BASEURLimg : string = "https://image.tmdb.org/t/p/w300";
 
+	movieData : Array<string> = []
+
 	constructor() {}
 
 	ngOnInit(): void {
@@ -31,7 +33,6 @@ export class CardClassicComponent implements OnInit {
 		(async () => {
 
 			if (localStorage.getItem(this.panelGenreGB[this.panelGenre.indexOf(this.genre)]) == null){
-				console.log("je passe par là");
 
 
 				var i = 0;
@@ -53,7 +54,6 @@ export class CardClassicComponent implements OnInit {
 						for (let x =0; x<len; x++){
 							//console.log(this.panelGenreGB[this.panelGenre.indexOf(this.genre)]);
 							//console.log(movie.genres[x].name);
-							console.log("blabla");
 							if (this.panelGenreGB[this.panelGenre.indexOf(this.genre)].includes(movie.genres[x].name)){
 								this.movieTitles.push(soustab);
 								cumul.push(movieTitle);
@@ -62,11 +62,11 @@ export class CardClassicComponent implements OnInit {
 						}
 					}
 				}
-
 				localStorage.setItem(this.panelGenreGB[this.panelGenre.indexOf(this.genre)], JSON.stringify(this.movieTitles));
+				console.log("terminé");
 							
 			} else {
-				console.log("loser")
+				console.log("repeat");
 				this.movieTitles = JSON.parse(String(localStorage.getItem(this.panelGenreGB[this.panelGenre.indexOf(this.genre)])));
 			}
 				

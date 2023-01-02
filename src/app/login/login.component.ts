@@ -20,7 +20,6 @@ export class LoginComponent implements OnInit {
 
   mailChanged(value: any){
     this.data = value;
-    console.log(value);
   }
 
   constructor(private router: Router, private titleService:Title) {
@@ -34,6 +33,7 @@ export class LoginComponent implements OnInit {
     var clickedMDP = false;
     
 	this.router.navigate(['login']);
+
 	if (localStorage.getItem('checked?') == "false" || localStorage.getItem("checked?") == null){
 	  localStorage.clear();
 	} else {
@@ -43,6 +43,7 @@ export class LoginComponent implements OnInit {
 	  if (mail1 != null && mdp1 != null){
 		mail1.value = String(localStorage.getItem('mail'));
 		mdp1.value = String(localStorage.getItem('mdp'));
+    this.router.navigate(['home']);
 	  }
 	}
   interval(100).subscribe(() => 
@@ -164,20 +165,21 @@ export class LoginComponent implements OnInit {
 
 	(async () => {
 		var liste = await getData();
-		$("#submit").on('click', function(e){
+		$('#submit').on("click", function(e){
 			e.preventDefault();
 			var mail = document.getElementById("mail") as HTMLInputElement | null;
 			var mdp =  document.getElementById("mdp") as HTMLInputElement | null;
-			var check=$("#check").is(":checked");
+			var check=$("#sign-in-info input").is(":checked");
 
 			if (mail != null && mdp != null){
 				for (var i =0; i<liste.length; i++){
-					if (liste[i].login == $("#mail").val() || $("#mail").val() == "Valentin"){
-						if (liste[i].mdp == $("#mdp").val() || $("#mdp").val() == "123"){
+					if (liste[i].login == $("#mail").val()){
+						if (liste[i].mdp == $("#mdp").val()){
 							//ident.push(smth);
 							localStorage.setItem('mail',String($("#mail").val()));
 							localStorage.setItem('mdp',String($("#mdp").val()));
 							localStorage.setItem('checked?', String(check));
+              localStorage.setItem('id', String(liste[i].id));
 							//redirect
 							ch.navigate(['home']);
 							//ch.navigate(['home'], {state: {data: ident}});
@@ -189,7 +191,6 @@ export class LoginComponent implements OnInit {
 		})
 
 	})();
-  console.log(this.data);
   }
 
 }

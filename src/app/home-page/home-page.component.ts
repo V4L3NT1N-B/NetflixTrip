@@ -30,6 +30,12 @@ export class HomePageComponent implements OnInit {
       this.router.navigate(['login']);  
     }
 
+    var ch = this.router;
+    $("#list-account ul li:last-of-type").on("click", function() {
+      localStorage.clear();
+      ch.navigate(['login']);
+    });
+
 
 		
     var scrollState = "top";
