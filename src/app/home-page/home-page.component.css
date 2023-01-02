@@ -88,34 +88,68 @@ nav ul li .active:hover {
 	transition: 0.4s;
 }
 
-.little-icon {
-    width: 12px;
-    height: 12px;
-    margin-left: 5px;
-}
-
 .nav-account .icon{
 	border-radius: 2px;
 }
 
-/* SOUS-MENU */
+/* SOUS-MENUS */
+#menu-notification {
+	display: none;
+	position: absolute;
+	right: 145px;
+	z-index: 5;
+	padding-top: 20px;
+}
+
+#scroll-notification {
+	border-top: 3px solid#FFFFFF;
+	width: 390px;
+	height: 100px;
+	background-color: rgba(0,0,0,0.85);
+	margin-top: -18px;
+	overflow-x: hidden;
+    overflow-y: auto;
+	transition: 0.1s;
+}
+
+#scroll-notification:hover {
+	background-color: rgba(0,0,0,1);
+	transition: 0.1s;
+} 
+
+#menu-notification #empty-notification {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: "Roboto";
+	color: #535353;
+	font-size: 16px;
+	height: 110px;
+}
+
 #menu-account {
 	position: absolute;
 	right: 72px;
 	display: none;
 	z-index: 5;
-	/* margin-top: 10px; */
 	padding-top: 20px;
 }
 
 .icon-list-account { 
 	transform: rotate(180deg);
-	/* margin-left: 150px; */
-	position: relative; /* */
-	left: 145px; /* */
-	top: -12px; /* */
-
+	position: relative;
 }
+
+#menu-account .icon-list-account {
+	left: 145px;
+	top: -12px;
+}
+
+#menu-notification .icon-list-account {
+	left: 367px;
+	top: -12px;
+}
+
 
 #list-account {
 	background-color: rgba(0,0,0,0.85);

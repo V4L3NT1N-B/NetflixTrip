@@ -76,3 +76,9 @@ a {
 	height: 32px;
 	object-fit: contain;
 }
+
+.little-icon {
+    width: 12px;
+    height: 12px;
+    margin-left: 5px;
+}

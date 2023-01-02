@@ -25,7 +25,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private router: Router, private titleService:Title) {
     this.titleService.setTitle("NetflixTrip");
-   }
+  }
+
   myform: any
   ident: Array<Array<string>> = []
 
@@ -179,7 +180,7 @@ export class LoginComponent implements OnInit {
 							localStorage.setItem('mdp',String($("#mdp").val()));
 							localStorage.setItem('checked?', String(check));
 							//redirect
-							ch.navigate(['home']);
+							ch.navigate(['account-menu']);
 							//ch.navigate(['home'], {state: {data: ident}});
 							//pour envoyer le message avec
 						}
