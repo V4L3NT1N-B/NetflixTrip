@@ -1,18 +1,28 @@
-#logo {
-	height: 100px;
-	margin-left: 30px;
+.wrapper {
+	position: relative;
 }
 
 #login-background {
-	position: absolute;
-	z-index: -1;
-	min-height: 100vh;
-	width: 100%;
-	overflow: hidden;
-	top: 0;
-	left: 0;
 	background-size: cover;
+	display: block;
+	height: 100%;
+	min-height: 100vh;
+	overflow: hidden;
+	position: absolute;
+	width: 100%;
+	z-index: -1;
 	opacity: 0.5;
+}
+
+#header {
+	width: 100%;
+	position: relative;
+	background : linear-gradient(180deg,rgba(0,0,0,.5) 0,transparent);
+}
+
+#logo {
+	height: 100px;
+	margin-left: 30px;
 }
 
 #login-form {
@@ -20,6 +30,7 @@
 	display: flex;
 	flex-flow: column wrap;
 	margin: auto;
+	margin-bottom: 150px;
 	width: 450px;
 	padding: 60px 68px 40px;
 	box-sizing: border-box;
@@ -235,10 +246,9 @@ label .checkmark:after {
 
 /* FOOTER */
 footer {
-	background-color: #000000;
-	opacity: 0.75;
-	position: relative;
+	background-color: rgba(0, 0, 0, 0.75);
 	padding: 30px;
+	position: relative;
 }
 
 #info-footer {
@@ -249,7 +259,7 @@ footer {
 footer p {
 	margin-top: 0;
 	color: #737373;
-	font-family: "Roboto-Regular";
+	font-family: Arial;
 }
 
 footer ul {
@@ -260,10 +270,11 @@ footer ul {
 footer ul li {
 	display: inline-block;
 	width: 25%;
+	margin-bottom: 16px;
 }
 
 footer ul li a {
-	font-family: "Roboto-Regular";
+	font-family: Arial;
 	color: #737373;
 	font-size: 13px;
 }
@@ -286,13 +297,14 @@ footer ul li a:hover {
 	content: url(../../assets/img/IconGlobe_2.svg);
 	width: 24px;
 	height: 24px;
+	padding: 15px;
+	vertical-align: middle;
 }
 
 #lang select {
-	padding: 10px 10px 10px 35px;
+	padding: 15px;
 	background-color: #000000;
 	border: none;
 	color: #737373;
 	border-radius: 2px;
 }
-

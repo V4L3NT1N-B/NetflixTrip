@@ -10,6 +10,7 @@ import { CardClassicComponent } from './card-classic/card-classic.component';
 import { RowComponent } from './row-classic/row-classic.component';
 import { LoginComponent } from './login/login.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { AccountMenuComponent } from './account-menu/account-menu.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     CardClassicComponent,
     RowComponent,
     LoginComponent,
-    HomePageComponent
+    HomePageComponent,
+    AccountMenuComponent
   ],
   imports: [
     BrowserModule,

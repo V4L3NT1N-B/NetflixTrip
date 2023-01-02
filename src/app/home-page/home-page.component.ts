@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 import { Router } from '@angular/router';
 import {Title} from "@angular/platform-browser";
+import { parseHostBindings } from '@angular/compiler';
+declare var getMovie : any;
+declare var getCasting : any;
 
 @Component({
   selector: 'app-home-page',
@@ -9,6 +12,11 @@ import {Title} from "@angular/platform-browser";
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
+
+  BASEURLimg : string = "https://image.tmdb.org/t/p/w1280";
+
+  moviePresentation : Array<string> = [];
+  castingPresentation : Array<string> = [];
 
   constructor(private router: Router, private titleService:Title) {
     this.titleService.setTitle("Accueil - NetflixTrip");
@@ -40,7 +48,7 @@ export class HomePageComponent implements OnInit {
 		
     var scrollState = "top";
 
-    $(window).scroll(function() {
+    $(window).on("scroll", function() {
       if(($(window).scrollTop() != 0 ) && (scrollState === "top")) {
         $(".align-header").css({"background-color": "#141414", "transition": "background-color 0.3s"});
         scrollState = "scrolled";
@@ -58,7 +66,14 @@ export class HomePageComponent implements OnInit {
     $(".synopsis").delay(firsttime).slideToggle(400).delay(secondtime).slideToggle(400);
     $(".netflix-production").delay(firsttime).animate({"height": "20px", "margin-right": "0"}).delay(secondtime).animate({"height": "35px", "margin-right": "10px"});
     $("#title-main h2").delay(firsttime).animate({"font-size": "16px"}).delay(secondtime).animate({"font-size": "24px"});
-    $("#title-main h1").delay(firsttime).animate({"font-size": "32px", "margin-bottom": "16px"}).delay(secondtime).animate({"font-size": "64px", "margin-bottom": "0"});
+
+    //SOUS-MENUS
+    $("#notification").on("mouseenter", function(){
+      $("#menu-notification").fadeIn(150);
+      $("#menu-notification").on("mouseleave", function(){
+        $("#menu-notification").fadeOut(150);
+      });
+    });
 
     $("#account").on("mouseenter", function(){
       $("#menu-account").fadeIn(150);
@@ -66,6 +81,47 @@ export class HomePageComponent implements OnInit {
         $("#menu-account").fadeOut(150);
       });
     });
+
+    //FILM DE PRESENTATION
+    (async () => {
+          var idMovie = Math.floor((Math.random() * 1000) + 1);
+					var movie = await getMovie(idMovie);
+          
+					var movieTitle = movie.title;
+					var URLmovie = movie.backdrop_path;
+					var URLimg = this.BASEURLimg + URLmovie;
+          var synopsis = movie.overview.substring(0, 300)
+          var lastSynopsis = synopsis.substring(0, synopsis.lastIndexOf(".")+1);
+
+          
+          if(movieTitle !== undefined || URLmovie !== undefined || movie.overview !== undefined){
+            this.moviePresentation.push(movieTitle);
+            this.moviePresentation.push(lastSynopsis);
+            this.moviePresentation.push(URLimg);
+          }
+
+          //Title size
+          var titleLength = movieTitle.length;
+          var titleSize = "";
+
+          if(titleLength >= 15){
+            titleSize = "45px";
+            $("h1").css("font-size", titleSize);
+          }
+          else {
+            titleSize = "64px";
+          }
+
+          $("#title-main h1").delay(firsttime).animate({"font-size": "32px", "margin-bottom": "16px"}).delay(secondtime).animate({"font-size": titleSize, "margin-bottom": "0"});
+
+
+          var casting = await getCasting(idMovie);
+          for(let i = 0 ; i < 3 ; i++){
+            this.castingPresentation.push(casting.cast[i].name);
+          }
+		})();
+
+    
 
   }
 

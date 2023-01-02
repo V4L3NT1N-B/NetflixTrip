@@ -1,11 +1,13 @@
 <div class="row">
 	<div class="slider">
-		<span class="button previous">
-			<img src="../../assets/img/IconArrow.svg" alt="">
-		</span>
+		<div class="background-overflow previous">
+			<span class="button previous">
+				<img src="../../assets/img/IconArrow.svg" alt="">
+			</span>
+		</div>
 		<div class="slider-mask show">
 			<div class="slider-row">
-				<div class="slider-item active" *ngFor="let title of movieTitles">
+				<div class="slider-item" *ngFor="let title of movieTitles">
 					<div class="CardClassic">
 						<h6>{{ title[0] }}</h6>
 						<div class="filter">
@@ -15,8 +17,10 @@
 				</div>
 			</div>
 		</div>
-		<span class="button next">
-			<img src="../../assets/img/IconArrow.svg" alt="">
-		</span>
+		<div class="background-overflow next">
+			<span class="button next">
+				<img src="../../assets/img/IconArrow.svg" alt="">
+			</span>
+		</div>
 	</div>
 </div>

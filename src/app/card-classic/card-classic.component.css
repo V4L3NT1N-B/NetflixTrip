@@ -26,20 +26,37 @@
 	cursor: pointer;
 }
 
+.background-overflow {
+	background-color: hsla(0,0%,8%,.5);
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 60px;
+	z-index: 4;
+	border-radius: 2%;
+	transition: 0.1s background-color;
+}
+
+.background-overflow.previous {
+	display: none;
+}
+
+.background-overflow:hover {
+	background-color: hsla(0,0%,8%,.8);
+	transition: 0.1s;
+}
+
 .button {
-	display: flex;
+	display: none;
 	justify-content: center;
 	text-align: center;
 	align-items: center;
 	width: 60px;
-	height: 130px;
-	background-color: hsla(0,0%,8%,.5);
 	position: absolute;
-	cursor: pointer;
-	z-index: 5;
-	visibility: visible;
 	top: 0;
 	bottom: 0;
+	cursor: pointer;
+	z-index: 5;
 }
 
 .next {
@@ -53,7 +70,12 @@
 .button img {
 	width: 32px;
 	height: 32px;
-	visibility: hidden;
+}
+
+.button:hover img {
+	width: 45px;
+	height: 45px;
+	transition: 0.15s;
 }
 
 .previous img {
@@ -67,6 +89,9 @@
 .CardClassic {
 	height: 130px;
 	border-radius: 2%;
+	display: flex;
+	align-items: end;
+	justify-content: center;
 }
 
 .filter {
@@ -79,6 +104,9 @@
 	position: absolute;
 	color: #FFFFFF;
 	z-index: 1;
+	margin: 0 10px 10px;
+	white-space: pre-line;
+	text-align: center;
 }
 
 .CardClassic img {

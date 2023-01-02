@@ -1,13 +1,15 @@
 <div class="presentation-rows">
-	<div *ngFor='let genre of panelGenre' style="width: 100%">
-		<div *ngIf="genre !== 'Top 10';else top10Row">
-			<h3>{{ genre }}</h3>
+	<div *ngFor='let genre of panelGenre'>
+		<div class="row" *ngIf="genre !== 'Top 10';else top10Row">
+			<h3><span class="titre">{{ genre }}</span><div class="explore"><span>Tout explorer</span><img class="little-icon" src="../../assets/img/IconArrowTitle.svg" alt="tout explorer"></div></h3>
 			<app-card-classic [panelGenre]="panelGenre" [genre]="genre"></app-card-classic>
 		</div>
 
 		<ng-template #top10Row>
-			<h3>{{ genre }} des séries aujourd'hui : France</h3>
-			<app-card-top10></app-card-top10>
+			<div class="row top10">
+				<h3>{{ genre }} des films aujourd'hui : France</h3>
+				<app-card-top10></app-card-top10>
+			</div>
 		</ng-template>	
 	</div>
 </div>

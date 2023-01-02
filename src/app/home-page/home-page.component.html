@@ -15,20 +15,31 @@
         </div>
 		<div class="nav-account">
             <ul>
-                <li><a><img class="icon" src="../../assets/img/IconSearch.svg" alt="Loupe"></a></li>
+                <li><a><img class="icon" src="../../assets/img/IconSearch.svg" alt="Recherche"></a></li>
                 <li><a>DIRECT</a></li>
                 <li><a>Jeunesse</a></li>
-                <li><a><img class="icon" src="../../assets/img/IconBell.svg" alt="Cloche"></a></li>
+                <li id="notification">
+					<a href="#">
+						<img class="icon" src="../../assets/img/IconBell.svg" alt="Notification">
+					</a>
+					<div id="menu-notification">
+						<img class="icon-list-account little-icon" src="../../assets/img/IconTriangle.svg" alt="">
+						<div id="scroll-notification">
+							<div id="empty-notification">Aucune notification r&eacute;cente</div>
+						</div>
+					</div>
+				</li>
                 <li id="account">
 					<a>
-						<img class="icon" src="../../assets/img/IconAvatar.png" alt="Avatar">
+						<img class="icon" src="../../assets/img/Avatar1.png" alt="Avatar">
 						<img class="little-icon" src="../../assets/img/IconTriangle.svg" alt="pointeur vers le bas">
 					</a>
 					<div id="menu-account">
 						<img class="icon-list-account little-icon" src="../../assets/img/IconTriangle.svg" alt="">
 						<div id="list-account">
 							<ul>
-								<li><a><img class="icon" src="../../assets/img/IconAvatar.png" alt="Avatar">Ronan</a></li>
+								<li><a><img class="icon" src="../../assets/img/Avatar2.png" alt="Avatar">Ronan</a></li>
+								<li><a><img class="icon" src="../../assets/img/AvatarKids.jpg" alt="Avatar">Jeunesse</a></li>
 								<li><a><img class="icon" src="../../assets/img/IconModify.svg" alt="Avatar">G&eacute;rer les profils</a></li>
 								<li><a><img class="icon" src="../../assets/img/IconTransfer.svg" alt="Avatar">Transf&eacute;rer les profils</a></li>
 								<li><a><img class="icon" src="../../assets/img/IconUser.svg" alt="Avatar">Compte</a></li>
@@ -45,24 +56,24 @@
 </header>
 <div id="main">
 	<div id="presentation-main">
-		<img id="img-main" src="../../assets/img/QueensGambit.jpg" alt="Deux joueurs d'échec s'affrontent">
+		<img id="img-main" [src]="moviePresentation[2]" alt="Deux joueurs d'échec s'affrontent">
 		<div id="text-main">
 			<div id="title-main">
 				<div id="type-main">
 					<img class="icon netflix-production" src="../../assets/img/LogoN.png" alt="">
-					<h2>S&eacute;rie</h2>
+					<h2>Film</h2>
 				</div>
-				<h1>Queen's Gambit</h1>
-				<p class="synopsis">Lorem ipsum, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				<h1>{{ moviePresentation[0] }}</h1>
+				<p class="synopsis">{{ moviePresentation[1] }}</p>
 				<div id="buttons-main">
 					<button type="button" class="button-play"><img class="icon" src="../../assets/img/IconPlay.png" alt="">Lecture</button>
 					<button type="button" class="button-info"><img class="icon" src="../../assets/img/IconInfo.svg" alt="">Plus d'infos</button>
 				</div>
 			</div>
 			<div class="casting">
-				<div><img class="icon-big" src="../../assets/img/IconChairWhite.png" alt="Casting"><p>Anya Taylor-Joy</p></div>
-				<div><img class="icon-big" src="../../assets/img/IconChairWhite.png" alt="Casting"><p>Marielle Heller</p></div>
-				<div><img class="icon-big" src="../../assets/img/IconChairWhite.png" alt="Casting"><p>Thomas Brodie-Sangster</p></div>
+				<div><img class="icon-big" src="../../assets/img/IconChairWhite.png" alt="Casting"><p>{{ castingPresentation[0] }}</p></div>
+				<div><img class="icon-big" src="../../assets/img/IconChairWhite.png" alt="Casting"><p>{{ castingPresentation[1] }}</p></div>
+				<div><img class="icon-big" src="../../assets/img/IconChairWhite.png" alt="Casting"><p>{{ castingPresentation[2] }}</p></div>
 			</div>
 		</div>
 	</div>

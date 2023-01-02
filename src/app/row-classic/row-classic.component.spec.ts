@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { RowClassicComponent } from './row-classic.component';
+import { RowComponent } from './row-classic.component';
 
-describe('RowClassicComponent', () => {
-	let component: RowClassicComponent;
-	let fixture: ComponentFixture<RowClassicComponent>;
+describe('RowComponent', () => {
+	let component: RowComponent;
+	let fixture: ComponentFixture<RowComponent>;
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [ RowClassicComponent ]
+			declarations: [ RowComponent ]
 		})
 		.compileComponents();
 
-		fixture = TestBed.createComponent(RowClassicComponent);
+		fixture = TestBed.createComponent(RowComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 	});

@@ -1,4 +1,5 @@
 import { Component, OnInit} from '@angular/core';
+import * as $ from 'jquery';
 
 @Component({
 	selector: 'app-row',
@@ -14,6 +15,6 @@ export class RowComponent implements OnInit {
 
 	constructor() {}
 
-	ngOnInit():void {}
+	ngOnInit() : void {	}
 
 }	

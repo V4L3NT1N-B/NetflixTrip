@@ -1,0 +1,81 @@
+.background {
+    background-color: #141414;
+}
+
+.wrapper {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1 {
+    font-weight: 100;
+    font-family: Arial;
+    font-size: 50px;
+    margin-top: 0;
+}
+
+#account-list {
+    display: flex;
+    flex-flow: column wrap;
+    margin: auto;
+    align-items: center;
+}
+
+ul {
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin-bottom: 70px;
+}
+
+ul li a {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    font-weight: 100;
+    font-family: Arial;
+    color: #808080;
+    font-size: 19px;
+    margin-right: 50px;
+}
+
+ul li::marker {
+    content: "";
+}
+
+ul li:last-of-type {
+    margin-right: 0;
+}
+
+ul li img {
+    width: 140px;
+    height: 140px;
+    border: 3px solid #141414;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+ul li:hover a {
+    color: #E5E5E5;
+    cursor: pointer;
+}
+
+ul li:hover img{
+    border: 3px solid #E5E5E5;
+    border-radius: 4px;
+}
+
+#button {
+    color: #808080;
+    border: 2px solid #808080;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+#button:hover {
+    color: #E5E5E5;
+    border: 2px solid #E5E5E5;
+}

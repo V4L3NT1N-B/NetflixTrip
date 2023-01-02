@@ -20,6 +20,23 @@ function getMovie(idMovie){
 	})
 };
 
+function getCasting(idMovie){
+	var apiUrl = BASEURL+"movie/"+idMovie+"/credits?api_key="+APIKey;
+	return new Promise((resolve, reject) => {
+		fetch(apiUrl)
+		.then(response => {
+			response.json().then(data => {
+				//console.log("getData : "+data);
+				resolve(data);
+			});
+		})
+		.catch(e => {
+			console.log(e);
+			reject(e);
+		});
+	})
+};
+
 function getTop10(){
 	var apiUrl = BASEURL+"movie/top_rated?api_key="+APIKey;
 	return new Promise((resolve, reject) => {
